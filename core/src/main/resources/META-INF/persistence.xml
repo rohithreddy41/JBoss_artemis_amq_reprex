@@ -7,7 +7,7 @@
     <persistence-unit name="nsfsApp" transaction-type="JTA">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <jta-data-source>java:jboss/datasources/XAConexusDS</jta-data-source>
-        <jar-file>../main/domain</jar-file>
+        <jar-file>../domain</jar-file>
         <shared-cache-mode>ENABLE_SELECTIVE</shared-cache-mode>
         <properties>
 

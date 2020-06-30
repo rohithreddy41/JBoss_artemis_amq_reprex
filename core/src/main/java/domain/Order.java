@@ -15,7 +15,7 @@ import javax.persistence.Table;
 import javax.persistence.Transient;
 
 @Entity
-@Table(name = "ORDER", schema = "NSFS")
+@Table(name = "TEST_ORDER", schema = "NSFS")
 @EntityListeners({
         UpdateEventListener.class
 })
@@ -63,4 +63,17 @@ public class Order {
         previousIsReadyForSO = this.isReadyForSO;
         isReadyForSO = readyForSO;
     }
+
+    /*
+    DDL:
+    CREATE TABLE "NSFS"."TEST_ORDER"
+   (
+   "ORDER_ID" NUMBER(19,0) DEFAULT NSFS.CONEXUS_SEQ.NEXTVAL NOT NULL ENABLE,
+	"IS_READY_FOR_SO" VARCHAR2(1 CHAR) DEFAULT 'N' NOT NULL ENABLE
+    );
+
+DML :
+INSERT INTO "NSFS"."ORDER" (ORDER_ID, IS_READY_FOR_SO) VALUES ('1', 'N')
+
+     */
 }

@@ -4,6 +4,6 @@ import domain.Order;
 
 
 
-public interface OrderMangaer {
+public interface OrderManager {
     void updateOrder(Long orderId);
 }

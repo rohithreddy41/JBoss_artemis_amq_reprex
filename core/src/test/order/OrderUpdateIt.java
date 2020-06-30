@@ -1,7 +1,6 @@
 package order;
 
-import beans.OrderManagerBean;
-import beans.OrderMangaer;
+import beans.OrderManager;
 import org.junit.Test;
 
 public class OrderUpdateIt extends AbstractIntegrationFixture{
@@ -9,17 +8,16 @@ public class OrderUpdateIt extends AbstractIntegrationFixture{
     final public static String APPNAME = "reprex-1.0-SNAPSHOT";
     final public static String MODULENAME = "core";
     final public static String BEAN_PREFIX = "ejb:" + APPNAME + "/" + MODULENAME;
-    final public static String ORDER_MANANGER_BEAN_NAME = BEAN_PREFIX + "/OrderManagerBean!" + OrderManagerBean.class.getName();
+    final public static String ORDER_MANANGER_BEAN_NAME = BEAN_PREFIX + "/OrderManagerBean!" + OrderManager.class.getName();
 
 
     @Test
     public void addMessages(){
-        OrderMangaer orderMangaer = getOrderManager();
-        orderMangaer.updateOrder(null);
+        OrderManager orderManager = getOrderManager();
+        orderManager.updateOrder(1l);
     }
 
-    OrderManagerBean  getOrderManager() {
-        return (OrderManagerBean)getBean(ORDER_MANANGER_BEAN_NAME);
-    }
-
+  private OrderManager getOrderManager(){
+      return (OrderManager)getBean(ORDER_MANANGER_BEAN_NAME);
+  }
 }

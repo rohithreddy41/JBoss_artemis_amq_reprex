@@ -1,0 +1,12 @@
+/home/dev/conexus/src/test-util/core/src/main/java/entityListeners/LifecycleListener.java
+/home/dev/conexus/src/test-util/core/src/main/java/hibernate/CnxsOracleDialect.java
+/home/dev/conexus/src/test-util/core/src/main/java/entityListeners/ChangedProperty.java
+/home/dev/conexus/src/test-util/core/src/main/java/entityListeners/UpdateEvent.java
+/home/dev/conexus/src/test-util/core/src/main/java/domain/Order.java
+/home/dev/conexus/src/test-util/core/src/main/java/entityListeners/LifecycleEvent.java
+/home/dev/conexus/src/test-util/core/src/main/java/beans/OrderManagerBean.java
+/home/dev/conexus/src/test-util/core/src/main/java/entityListeners/UpdateEventListener.java
+/home/dev/conexus/src/test-util/core/src/main/java/annotations/TrackedProperties.java
+/home/dev/conexus/src/test-util/core/src/main/java/constants/NotificationConstants.java
+/home/dev/conexus/src/test-util/core/src/main/java/beans/OrderManager.java
+/home/dev/conexus/src/test-util/core/src/main/java/annotations/TrackedProperty.java

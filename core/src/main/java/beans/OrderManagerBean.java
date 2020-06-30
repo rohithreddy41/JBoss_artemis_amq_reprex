@@ -2,13 +2,17 @@ package beans;
 
 import domain.Order;
 
-import javax.enterprise.context.RequestScoped;
-import javax.inject.Inject;
+import javax.ejb.Remote;
+import javax.ejb.Singleton;
+import javax.enterprise.context.ApplicationScoped;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-@RequestScoped
-public class OrderManagerBean implements OrderMangaer {
+
+@Singleton
+@Remote(OrderManager.class)
+@ApplicationScoped
+public class OrderManagerBean implements OrderManager {
 
    /* @Inject
     private EntityManager entityManager;*/
@@ -17,8 +21,11 @@ public class OrderManagerBean implements OrderMangaer {
     private EntityManager entityManager;
 
     @Override
-    public void updateOrder(Order order) {
-       entityManager.merge(order);
-       entityManager.flush();
+    public void updateOrder(Long orderId) {
+        Order order = entityManager.find(Order.class,orderId);
+        boolean isReadyForSo = order.isReadyForSO();
+        order.setReadyForSO(!isReadyForSo);
+        entityManager.merge(order);
+        entityManager.flush();
     }
 }
