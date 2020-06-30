@@ -1,0 +1,13 @@
+entityListeners/UpdateEvent.class
+hibernate/CnxsOracleDialect.class
+domain/Order.class
+constants/NotificationConstants$LifecycleAction.class
+entityListeners/LifecycleEvent.class
+annotations/TrackedProperties.class
+entityListeners/LifecycleListener.class
+beans/OrderManagerBean.class
+beans/OrderMangaer.class
+constants/NotificationConstants.class
+entityListeners/UpdateEventListener.class
+entityListeners/ChangedProperty.class
+annotations/TrackedProperty.class
