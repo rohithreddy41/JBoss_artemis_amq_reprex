@@ -38,7 +38,7 @@ public abstract class LifecycleListener {
 //
 //    @Inject
 //    @LifecycleTopic
-//    private TopicSession session;
+//    private TopicSession session; org.jboss.spec.javax.jms
 
     protected void sendEvent(LifecycleEvent event, NotificationConstants.LifecycleAction action) {
         sendEvent(event, action, 0);

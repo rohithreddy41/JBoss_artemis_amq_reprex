@@ -15,6 +15,7 @@ public class OrderUpdateIt extends AbstractIntegrationFixture{
     public void addMessages(){
         OrderManager orderManager = getOrderManager();
         orderManager.updateOrder(1l);
+        System.out.println(orderManager.getMessageReceivedCount());
     }
 
   private OrderManager getOrderManager(){

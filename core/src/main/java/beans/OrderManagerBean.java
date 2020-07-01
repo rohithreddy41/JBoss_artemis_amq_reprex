@@ -1,10 +1,12 @@
 package beans;
 
 import domain.Order;
+import mdb.MDBMessageTracker;
 
 import javax.ejb.Remote;
 import javax.ejb.Singleton;
 import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
@@ -14,8 +16,8 @@ import javax.persistence.PersistenceContext;
 @ApplicationScoped
 public class OrderManagerBean implements OrderManager {
 
-   /* @Inject
-    private EntityManager entityManager;*/
+    @Inject
+    private MDBMessageTracker mdbMessageTracker;
 
     @PersistenceContext(unitName="nsfsApp")
     private EntityManager entityManager;
@@ -27,5 +29,10 @@ public class OrderManagerBean implements OrderManager {
         order.setReadyForSO(!isReadyForSo);
         entityManager.merge(order);
         entityManager.flush();
+    }
+
+    @Override
+    public int getMessageReceivedCount() {
+        return mdbMessageTracker.getMessgeReceivedCount();
     }
 }
